@@ -1,37 +1,36 @@
 <template>
-  <div>
-    <HeadBar></HeadBar>
-    <div class="all_con">
-      <MenuBar></MenuBar>
-      <!-- <sidebar-menu :menu="menu" /> -->
-      <!-- <ConTent></ConTent> -->
-    </div>
+  <div class="content">
+    <!-- <ManageMain></ManageMain> -->
+    <!-- <BulletinMain></BulletinMain> -->
+    <!-- <BlockingMem></BlockingMem> -->
+    <!-- <DormantMem></DormantMem> -->
   </div>
-  <router-view/>
 </template>
 <script>
-import HeadBar from '@/views/HeadBar.vue'
-import MenuBar from '@/views/MenuBar.vue'
-// import ConTent from '@/views/ConTent.vue'
-// import { SidebarMenu } from 'vue-sidebar-menu'
+// import ManageMain from '@/views/main/ManageMain.vue'
+// import BulletinMain from '@/views/main/BulletinMain.vue'
+// import BlockingMem from '@/views/main/BlockingMem.vue'
+// import DormantMem from '@/views/main/Dorma ntMem.vue'
 export default {
+  name: 'ConTent',
   components: {
-    MenuBar,
-    HeadBar
-    // SidebarMenu,
-    // ConTent
+    // ManageMain
+    // BulletinMain
+    // BlockingMem
+    // DormantMem
   },
   data () {
     return {
       menu: [
         {
           header: true,
-          title: 'Main Navigation'
+          title: 'Main Navigation',
+          href: 'views/main/BulletinMain'
           // component: componentName
           // visibleOnCollapse: true
         },
         {
-          href: '/',
+          href: '/views/main/BulletinMain',
           title: 'Dashboard',
           icon: 'fa fa-user'
           /*
@@ -91,15 +90,6 @@ export default {
   }
 }
 </script>
-<style>
-@import '../src/assets/reset.css';
-@import '../src/assets/common.css';
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.all_con{width:auto; display: inline-block; float: left;}
+<style scoped>
+.content{width: calc(100% - 200px); background-color: rgb(243 244 246); display: inline-block; height: inherit; padding: 20px 12px; box-sizing: border-box;}
 </style>
